@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hospital',
+    'turnos',
+    'usuarios',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,12 @@ WSGI_APPLICATION = 'hospital_turnos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hospital_turnos_bd',
+        'USER': 'django_postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',   # O la dirección IP de tu servidor PostgreSQL
+        'PORT': '5432',        # Puerto predeterminado de PostgreSQL
     }
 }
 
